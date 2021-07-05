@@ -3,12 +3,12 @@ import {View,Text,SafeAreaView,StyleSheet} from 'react-native'
 import Typography from '../components/atoms/Typography'
 import {TextStyles} from '../components/atoms/Typography'
 
-const ItemDetailsScreen = () =>{
+const SplashScreen = () =>{
     return(
         <SafeAreaView>
-            <Text>Item Details Screen</Text>
+            <Text>Splash Screen</Text>
         </SafeAreaView>
     )
 }
 
-export default ItemDetailsScreen;
+export default SplashScreen;
