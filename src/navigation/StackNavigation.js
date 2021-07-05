@@ -8,9 +8,6 @@ import ItemDetailsScreen from '../screens/ItemDetailsScreen';
 import SplashScreen from '../screens/SplashScreen';
 import {SCREEN_ROUTE_MAPPING} from '../utils/strings'
 
-import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
-import ForgotPassConfirmOTPScreen from '../screens/ForgotPassConfirmOTPScreen';
-
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
