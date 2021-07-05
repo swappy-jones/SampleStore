@@ -5,16 +5,17 @@ import {View,StyleSheet} from 'react-native'
 import theme from '../../../theme';
 
 const Button = ({
-    icon,variant,handleOnPress,color,labelStyle,buttonStyle,...restProps
+    icon,variant,handleOnPress,color,labelStyle,buttonStyle,label,...restProps
 }) => {
     return (
-        <PaperButton icon = {icon.icon}
+        <PaperButton icon = {icon}
                 mode={variant} 
-                onPress={() => {handleOnPress(icon.iconCaption)}}
-                color ={color} labelStyle={labelStyle} 
+                onPress={() => {handleOnPress()}}
+                color ={color} 
+                labelStyle={labelStyle} 
                 style={buttonStyle} {...restProps}
                 contentStyle={ButtonStyles.contentStyle}>
-                {icon.iconCaption}
+                {label}
         </PaperButton>
 )
     };
@@ -25,8 +26,9 @@ Button.propTypes = {
 }
 Button.defaultProps = {
     handleOnPress: () => {},
-    color : theme.palette.SECONDRY,
-    upperCase:false
+    color : theme.palette.PRIMARY,
+    upperCase:false,
+    labelStyle:{color:theme.palette.WHITE}
 }
 export default Button;
 
@@ -37,6 +39,9 @@ export const ButtonStyles = StyleSheet.create({
         justifyContent:'center',
         borderRadius: 10,
         marginTop:18
+      },
+      primaryButtonLabelStyle:{
+          color:theme.palette.WHITE
       },
       contentStyle:{
         width:'100%',

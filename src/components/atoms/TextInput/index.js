@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View,Text,StyleSheet} from 'react-native';
 import { TextInput as PaperTextInput } from 'react-native-paper';
 import theme from '../../../theme';
+import PropTypes from 'prop-types'
+
 
 const TextInput = ({label,text,leftIcon,rightIcon,placeholder,onChangeText,error,mode,disabled,theme,outlineColor,style,errorMessage,important,multiline,...restProps}) => {
   return (
@@ -33,9 +35,9 @@ TextInput.prototypes = {
 }
 
 TextInput.defaultProps ={
-  outlineColor:theme.palette.GREY,
+  outlineColor:theme.palette.PRIMARY,
   disabled:false,
-  style:styles.spacingStyle
+  style:{marginBottom:10}
 }
 
 
@@ -43,12 +45,9 @@ export default TextInput;
 
 const styles = StyleSheet.create({
   errorStyle:{
-    color:theme.palette.SECONDRY
+    color:theme.palette.PRIMARY
   },
   important:{
-    color:theme.palette.RED
-  },
-  spacingStyle:{
-      marginBottom:10
+    color:theme.palette.PRIMARY
   }
 })

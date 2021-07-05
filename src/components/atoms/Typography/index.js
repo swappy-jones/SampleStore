@@ -36,6 +36,13 @@ export const TextStyles = StyleSheet.create({
         fontSize:16,
         color:theme.palette.BLACK
     },
+    headerTextPurple:{
+        fontSize:36,
+        fontWeight:'bold',
+        color:theme.palette.PURPLE,
+        textAlign:'center',
+        marginBottom:16
+    }
 })
 
 export default Typography;

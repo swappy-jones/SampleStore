@@ -1,11 +1,12 @@
 const theme = {
     palette:{
-        PRIMARY:"#13AD3C",
-        SECONDRY:"#FFC600",
+        PRIMARY:"#8B008B",
+        SECONDRY:"#FAFAD2",
         WHITE:"#FFFFFF",
         BLACK:"#000000",
         GREY:"#F2F2F2",
-        SHADED_BACKGROUND:'#E4EDE5'
+        SHADED_BACKGROUND:'#E4EDE5',
+        PURPLE:"#8B008B"
     },
     button:{
         text:"text",
@@ -18,12 +19,12 @@ const theme = {
     },
 }
 
-export const textInputWhiteBorder = {
+export const textInputTheme = {
      colors: {
-          primary: theme.palette.WHITE,
-          text: theme.palette.WHITE,
-          background: theme.palette.PRIMARY,
-          placeholder:theme.palette.WHITE
+          primary: theme.palette.PRIMARY,
+          text: theme.palette.PRIMARY,
+          background: theme.palette.SECONDRY,
+          placeholder:theme.palette.PRIMARY
         }
     }
 
