@@ -33,12 +33,17 @@ const ItemDetailsScreen = ({route,navigation}) =>{
 
 
     const handleEditPress = () =>{
-        setEditEnabled(!editEnabled)
+        if(!editEnabled){
+            setEditEnabled(!editEnabled)
+        }else{
+            route.params.updateData(true)
+            navigation.goBack()
+        }
 }
 
     return(
         <SafeAreaView style={styles.mainViewStyle}>
-            <Toolbar navigation={navigation} showBackButton={true} updateData={route.params.updateData}/>
+            <Toolbar navigation={navigation} showBackButton={true}/>
             <CardView style={styles.card}>
                 <TextInput
                     label={ITEM_DETAILS_SCREEN_ICON.itemName.iconCaption}
@@ -55,7 +60,66 @@ const ItemDetailsScreen = ({route,navigation}) =>{
                         color={theme.palette.PRIMARY}
                         />
                     }/>
-
+                <TextInput
+                    label={ITEM_DETAILS_SCREEN_ICON.itemDescription.iconCaption}
+                    mode={theme.textInput.outlined}
+                    theme={theme.textInputTheme}
+                    style={styles.textInputStyle}
+                    text={description}
+                    error={!descriptionError.isValid}
+                    errorMessage={descriptionError.errorMessage}
+                    onChangeText={setDescription}
+                    leftIcon={
+                        <PaperTextInput.Icon
+                        name={ITEM_DETAILS_SCREEN_ICON.itemDescription.icon}
+                        color={theme.palette.PRIMARY}
+                        />
+                    }/>
+                <TextInput
+                    label={ITEM_DETAILS_SCREEN_ICON.itemPrice.iconCaption}
+                    mode={theme.textInput.outlined}
+                    theme={theme.textInputTheme}
+                    style={styles.textInputStyle}
+                    text={price}
+                    error={!priceError.isValid}
+                    errorMessage={priceError.errorMessage}
+                    onChangeText={setPrice}
+                    leftIcon={
+                        <PaperTextInput.Icon
+                        name={ITEM_DETAILS_SCREEN_ICON.itemPrice.icon}
+                        color={theme.palette.PRIMARY}
+                        />
+                    }/>
+                <TextInput
+                    label={ITEM_DETAILS_SCREEN_ICON.itemTag.iconCaption}
+                    mode={theme.textInput.outlined}
+                    theme={theme.textInputTheme}
+                    style={styles.textInputStyle}
+                    text={tags}
+                    error={!tagsError.isValid}
+                    errorMessage={tagsError.errorMessage}
+                    onChangeText={setTags}
+                    leftIcon={
+                        <PaperTextInput.Icon
+                        name={ITEM_DETAILS_SCREEN_ICON.itemTag.icon}
+                        color={theme.palette.PRIMARY}
+                        />
+                    }/>
+                <TextInput
+                    label={ITEM_DETAILS_SCREEN_ICON.itemStock.iconCaption}
+                    mode={theme.textInput.outlined}
+                    theme={theme.textInputTheme}
+                    style={styles.textInputStyle}
+                    text={stock}
+                    error={!stockError.isValid}
+                    errorMessage={stockError.errorMessage}
+                    onChangeText={setStock}
+                    leftIcon={
+                        <PaperTextInput.Icon
+                        name={ITEM_DETAILS_SCREEN_ICON.itemStock.icon}
+                        color={theme.palette.PRIMARY}
+                        />
+                    }/>
             </CardView>
             <FloatingActionButton 
                 icon={editEnabled?ITEM_DETAILS_SCREEN_ICON.save.icon:ITEM_DETAILS_SCREEN_ICON.edit.icon}
