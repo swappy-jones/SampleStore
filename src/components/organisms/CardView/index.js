@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     elevation: 8,
     backgroundColor: theme.palette.SECONDRY,
     padding: 20,
-    borderRadius: 10
+    borderRadius: 10,
   }
 });
 export default CardView;

@@ -7,15 +7,16 @@ import {TextStyles} from '../components/atoms/Typography'
 import CardView from '../components/organisms/CardView';
 import theme, { textInputTheme } from '../theme';
 import { LOGIN_SCREEN_ICON } from '../utils/IconGetter';
-import { LOGIN_SCREEN_TEXTS } from '../utils/strings';
+import { LOGIN_SCREEN_TEXTS, SCREEN_ROUTE_MAPPING } from '../utils/strings';
 import TextInput from '../components/atoms/TextInput'
 import { TextInput as PaperTextInput } from 'react-native-paper';
+import {StackActions} from '@react-navigation/native';
 
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const LoginScreen = () =>{
+const LoginScreen = ({navigation}) =>{
 
     const [passwordVisible, setPasswordVisible] = React.useState(false);
     const [username, setUsername] = React.useState('');
@@ -24,7 +25,9 @@ const LoginScreen = () =>{
     const [passwordError, setPasswordError] = React.useState({isValid: true,errorMessage: '',});
 
     const handleSignInPress = () =>{
-
+        navigation.dispatch(
+            StackActions.replace(SCREEN_ROUTE_MAPPING.FirstTimeLoginScreen)
+        )
     }
 
 

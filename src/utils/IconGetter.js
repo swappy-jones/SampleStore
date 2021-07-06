@@ -27,3 +27,26 @@ export const LOGIN_SCREEN_ICON={
         icon: require('../assets/login_icon.png')
     }
 }
+
+export const FIRST_TIME_LOGIN_SCREEN_ICON={
+    firstSlide:{
+        icon:require('../assets/namaste_icon.png'),
+        iconCaption:'Welcome to \nCapo Sales'
+    },
+    secondSlide:{
+        icon:require('../assets/create_shop_icon.png'),
+        iconCaption:'Create a store'
+    },
+    firstSlide:{
+        icon:require('../assets/add_items_icon.png'),
+        iconCaption:'Add Items'
+    },
+    firstSlide:{
+        icon:require('../assets/make_money_icon.png'),
+        iconCaption:'Make Money'
+    },
+    continue:{
+        icon:require('../assets/arrow_right_icon.png'),
+        iconCaption:'Continue'
+    }
+}
