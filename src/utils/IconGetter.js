@@ -1,4 +1,8 @@
-const { SPLASH_SCREEN_TEXTS,LOGIN_SCREEN_TEXTS } = require('./strings')
+const { 
+    SPLASH_SCREEN_TEXTS,
+    LOGIN_SCREEN_TEXTS,
+    FIRST_TIME_LOGIN_SCREEN_TEXTS,
+    CREATE_STORE_SCREEN_TEXTS } = require('./strings')
 
 export const SPLASH_ICON = {
     iconCaption:SPLASH_SCREEN_TEXTS.iconCaption,
@@ -29,24 +33,56 @@ export const LOGIN_SCREEN_ICON={
 }
 
 export const FIRST_TIME_LOGIN_SCREEN_ICON={
-    firstSlide:{
-        icon:require('../assets/namaste_icon.png'),
-        iconCaption:'Welcome to \nCapo Sales'
-    },
-    secondSlide:{
-        icon:require('../assets/create_shop_icon.png'),
-        iconCaption:'Create a store'
-    },
-    firstSlide:{
-        icon:require('../assets/add_items_icon.png'),
-        iconCaption:'Add Items'
-    },
-    firstSlide:{
-        icon:require('../assets/make_money_icon.png'),
-        iconCaption:'Make Money'
-    },
+    slides:[
+        {
+            icon:require('../assets/namaste_icon.png'),
+            iconCaption:FIRST_TIME_LOGIN_SCREEN_TEXTS.firstSlideIconCaption
+        },
+        {
+            icon:require('../assets/create_shop_icon.png'),
+            iconCaption:FIRST_TIME_LOGIN_SCREEN_TEXTS.secondSlideIconCaption
+        },
+        {
+            icon:require('../assets/add_items_icon.png'),
+            iconCaption:FIRST_TIME_LOGIN_SCREEN_TEXTS.thirdSlideIconCaption
+        },
+        {
+            icon:require('../assets/make_money_icon.png'),
+            iconCaption:FIRST_TIME_LOGIN_SCREEN_TEXTS.fourthSlideIconCaption
+        },
+    ],
     continue:{
         icon:require('../assets/arrow_right_icon.png'),
-        iconCaption:'Continue'
+        iconCaption:FIRST_TIME_LOGIN_SCREEN_TEXTS.continueButtonIconCaption
+    }
+}
+
+export const CREATE_STORE_SCREEN_ICON={
+    screenLogo:{
+        icon:require('../assets/create_shop_icon.png'),
+        iconCaption:FIRST_TIME_LOGIN_SCREEN_TEXTS.secondSlideIconCaption
+    },
+    storeName:{
+        icon:require('../assets/name_icon.png'),
+        iconCaption:CREATE_STORE_SCREEN_TEXTS.storeNameField
+    },
+    storeBio:{
+        icon:require('../assets/description_icon.png'),
+        iconCaption:CREATE_STORE_SCREEN_TEXTS.storeBioField
+    },
+    createButton:{
+        icon:require('../assets/create_icon.png'),
+        iconCaption:CREATE_STORE_SCREEN_TEXTS.createButton
+    },
+}
+
+export const BOTTOM_TABS={
+    itemList:{
+        icon:require('../assets/item_list_icon.png'),
+        iconCaption:"Items"
+    },
+    store:{
+        icon:require('../assets/store_icon.png'),
+        iconCaption:"Store"
     }
 }

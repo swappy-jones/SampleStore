@@ -36,7 +36,9 @@ const LoginScreen = ({navigation}) =>{
             <Image 
                 source={LOGIN_SCREEN_ICON.appLogo.icon} 
                 style={styles.imageStyle}/>
-            <Typography text={LOGIN_SCREEN_TEXTS.iconCaption} textStyle={TextStyles.headerTextPurple}/>
+            <Typography 
+                text={LOGIN_SCREEN_TEXTS.iconCaption} 
+                textStyle={TextStyles.headerTextPurple}/>
             <View style={styles.wrapperViewStyle}>
             <CardView style={styles.card}>
                 <TextInput

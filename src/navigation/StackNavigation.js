@@ -6,7 +6,9 @@ import FirstTimeLoginScreen from '../screens/FirstTimeLoginScreen';
 import StoreDetailsScreen from '../screens/StoreDetailsScreen';
 import ItemDetailsScreen from '../screens/ItemDetailsScreen';
 import SplashScreen from '../screens/SplashScreen';
+import CreateStoreScreen from '../screens/CreateStoreScreen';
 import {SCREEN_ROUTE_MAPPING} from '../utils/strings'
+
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,7 @@ const StackNavigation = () => {
           <Stack.Screen name={SCREEN_ROUTE_MAPPING.SplashScreen} component={SplashScreen} />
           <Stack.Screen name={SCREEN_ROUTE_MAPPING.LoginScreen} component={LoginScreen} />
           <Stack.Screen name={SCREEN_ROUTE_MAPPING.FirstTimeLoginScreen} component={FirstTimeLoginScreen} />
+          <Stack.Screen name={SCREEN_ROUTE_MAPPING.CreateStoreScreen} component={CreateStoreScreen} />
           <Stack.Screen name={SCREEN_ROUTE_MAPPING.StoreDetailsScreen} component={StoreDetailsScreen} />
           <Stack.Screen name={SCREEN_ROUTE_MAPPING.HomeDashboardScreen} component={HomeDashboardScreen} />
           <Stack.Screen name={SCREEN_ROUTE_MAPPING.ItemDetailsScreen} component={ItemDetailsScreen} />

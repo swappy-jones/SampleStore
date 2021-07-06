@@ -13,6 +13,7 @@
     "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^5.11.11",
+    "@react-navigation/material-bottom-tabs": "^5.3.15",
     "@react-navigation/stack": "^5.14.5",
     "install": "^0.13.0",
     "npm": "^7.19.1",
@@ -25,7 +26,8 @@
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.4.0",
     "react-native-swipe-list-view": "^3.2.7",
-    "react-native-swiper": "^1.6.0"
+    "react-native-swiper": "^1.6.0",
+    "react-native-vector-icons": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
