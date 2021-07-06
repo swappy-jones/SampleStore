@@ -1,3 +1,5 @@
+const APP_NAME = "Capo Sales"
+
 export const SCREEN_ROUTE_MAPPING={
     SplashScreen:"SplashScreen",
     LoginScreen:"LoginScreen",
@@ -44,4 +46,8 @@ export const BOTTOM_NAVIGATION={
 export const STORE_DETAILS_SCREEN_TEXTS={
     storeNameField:"Store Name",
     storeBioField:"Store Bio",
+}
+
+export const HEADER_TEXT={
+    appName:APP_NAME
 }

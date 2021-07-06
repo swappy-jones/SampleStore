@@ -4,7 +4,8 @@ const {
     FIRST_TIME_LOGIN_SCREEN_TEXTS,
     CREATE_STORE_SCREEN_TEXTS,
     BOTTOM_NAVIGATION,
-    STORE_DETAILS_SCREEN_TEXTS } = require('./strings')
+    STORE_DETAILS_SCREEN_TEXTS,
+    HEADER_TEXT } = require('./strings')
 
 export const SPLASH_ICON = {
     iconCaption:SPLASH_SCREEN_TEXTS.iconCaption,
@@ -106,5 +107,21 @@ export const STORE_DETAILS_ICON={
     },
     save:{
         icon:require('../assets/save_icon.png')
+    }
+}
+
+export const ITEM_LIST_SCREEN_ICON={
+    addItem:{
+        icon: require('../assets/add_icon.png')
+    }
+}
+
+export const HEADER_ICON={
+    app:{
+        icon: require('../assets/app_logo.png'),
+        iconCaption: HEADER_TEXT.appName
+    },
+    backButton:{
+        icon: require('../assets/arrow_left.png'),
     }
 }

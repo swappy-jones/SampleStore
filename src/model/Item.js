@@ -1,9 +1,11 @@
 const Item ={
     name:"",
-    desc:"",
+    description:"",
     price:0,
     tags:[],
-    availableStock:""
+    availableStock:0,
+    unit:"",
+    id:""
 }
 
 export default Item;

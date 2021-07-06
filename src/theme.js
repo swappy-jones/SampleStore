@@ -6,7 +6,8 @@ const theme = {
         BLACK:"#000000",
         GREY:"#C9A9A9",
         SHADED_BACKGROUND:'#E4EDE5',
-        PURPLE:"#8B008B"
+        PURPLE:"#8B008B",
+        LIGHT_GREY:"#F0F2F5"
     },
     button:{
         text:"text",

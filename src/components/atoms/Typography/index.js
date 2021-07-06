@@ -2,10 +2,12 @@ import * as React from 'react';
 import {StyleSheet, Text as ReactNativeText} from 'react-native';
 import theme from '../../../theme';
 
-const Typography = ({text,textStyle}) => {
+const Typography = ({text,textStyle,extraProps}) => {
     return (
         <ReactNativeText
-            style={textStyle}>{text}</ReactNativeText>
+            style={textStyle} {...extraProps}>
+                {text} 
+        </ReactNativeText>
     );
 };
 
@@ -27,6 +29,15 @@ export const TextStyles = StyleSheet.create({
     bodyTextPrimary:{
         fontSize:16,
         color:theme.palette.PRIMARY
+    },
+    smallTextPrimary:{
+        fontSize:12,
+        color:theme.palette.PRIMARY
+    },
+    smallFocusTextPrimary:{
+        fontSize:14,
+        color:theme.palette.PRIMARY,
+        fontWeight:'bold'
     },
     bodyTextGrey:{
         fontSize:14,
