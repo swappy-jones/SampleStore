@@ -25,6 +25,7 @@ const StoreItem = ({item}) =>{
                 </View>
             </View>
             <Typography text={item.description} textStyle={{...TextStyles.smallTextPrimary,...styles.typographySpacingStyle}}/>
+            <Typography text={item.tags} textStyle={{...TextStyles.smallFocusTextPrimary,...styles.typographySpacingStyle}}/>
             <Typography text={"Left in stock: "+item.availableStock+item.unit} textStyle={{...TextStyles.smallFocusTextPrimary,...styles.typographySpacingStyle}}/>
         </CardView>
     );

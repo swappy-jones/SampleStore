@@ -61,7 +61,8 @@ const StoreDetailsScreen = () =>{
             </CardView>
             <FloatingActionButton 
                 icon={editEnabled?STORE_DETAILS_ICON.save.icon:STORE_DETAILS_ICON.edit.icon}
-                handleFABPress={handleEditPress}/>
+                handleFABPress={handleEditPress}
+                label={editEnabled?STORE_DETAILS_ICON.save.iconCaption:STORE_DETAILS_ICON.edit.iconCaption}/>
         </SafeAreaView>
     )
 }

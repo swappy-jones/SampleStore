@@ -46,8 +46,20 @@ export const BOTTOM_NAVIGATION={
 export const STORE_DETAILS_SCREEN_TEXTS={
     storeNameField:"Store Name",
     storeBioField:"Store Bio",
+    edit:"Edit",
+    save:"Save"
 }
 
 export const HEADER_TEXT={
     appName:APP_NAME
+}
+
+export const ITEM_DETAILS_SCREEN_TEXTS={
+    name:"Name",
+    description:"Description",
+    price:"Price ($)",
+    tags:"Tags",
+    stock:"Available Stock",
+    edit:"Edit",
+    save:"Save"
 }

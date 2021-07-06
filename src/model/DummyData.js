@@ -5,7 +5,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"1"
@@ -14,7 +14,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"2"
@@ -23,7 +23,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"3"
@@ -32,7 +32,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"4"
@@ -41,7 +41,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"5"
@@ -50,7 +50,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"6"
@@ -59,7 +59,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"7"
@@ -68,7 +68,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"8"
@@ -77,7 +77,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"9"
@@ -86,7 +86,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"10"
@@ -95,7 +95,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"11"
@@ -104,7 +104,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"12"
@@ -113,7 +113,7 @@ export const DUMMY_DATA_ITEMS=[
         name:"Real Orange Juice",
         description:"Real orange juice dummy description.",
         price:100,
-        tags:["orange","juice","real","cheap","tasty","healthy","family","ripe","beatles","are","the","greatest","don\'t ask"],
+        tags:"orange,juice,abc,def,pqr,abc",
         availableStock:300,
         unit:"KG",
         "id":"13"

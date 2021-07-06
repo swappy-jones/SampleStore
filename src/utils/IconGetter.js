@@ -5,7 +5,8 @@ const {
     CREATE_STORE_SCREEN_TEXTS,
     BOTTOM_NAVIGATION,
     STORE_DETAILS_SCREEN_TEXTS,
-    HEADER_TEXT } = require('./strings')
+    HEADER_TEXT,
+    ITEM_DETAILS_SCREEN_TEXTS } = require('./strings')
 
 export const SPLASH_ICON = {
     iconCaption:SPLASH_SCREEN_TEXTS.iconCaption,
@@ -103,9 +104,11 @@ export const STORE_DETAILS_ICON={
         iconCaption:STORE_DETAILS_SCREEN_TEXTS.storeBioField
     },
     edit:{
+        iconCaption:STORE_DETAILS_SCREEN_TEXTS.edit,
         icon:require('../assets/edit_icon.png')
     },
     save:{
+        iconCaption:STORE_DETAILS_SCREEN_TEXTS.save,
         icon:require('../assets/save_icon.png')
     }
 }
@@ -123,5 +126,36 @@ export const HEADER_ICON={
     },
     backButton:{
         icon: require('../assets/arrow_left.png'),
+    }
+}
+
+export const ITEM_DETAILS_SCREEN_ICON={
+    itemName:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.name,
+        icon:require('../assets/item_name_icon.png')
+    },
+    itemDescription:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.description,
+        icon:require('../assets/product_description_icon.png')
+    },
+    itemPrice:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.price,
+        icon:require('../assets/dollar_icon.png')
+    },
+    itemTag:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.tags,
+        icon:require('../assets/tag_icon.png')
+    },
+    itemStock:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.stock,
+        icon:require('../assets/stock_icon.png')
+    },
+    edit:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.edit,
+        icon:require('../assets/edit_icon.png')
+    },
+    save:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.save,
+        icon:require('../assets/save_icon.png')
     }
 }

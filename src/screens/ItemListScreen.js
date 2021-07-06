@@ -31,14 +31,6 @@ const ItemListScreen = ({navigation}) =>{
         <StoreItem item={item}/>
       );
 
-    //   useEffect(() =>{
-    //     onDataUpdate()
-    //   },[isDataUpdated])
-
-    //   const onDataUpdate = () =>{
-    //       console.log(isDataUpdated)
-    //   }
-
     return(
         <SafeAreaView style={styles.mainViewStyle}>
             <Toolbar/>
