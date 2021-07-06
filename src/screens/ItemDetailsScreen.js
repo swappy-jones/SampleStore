@@ -142,10 +142,9 @@ const styles = StyleSheet.create({
         width: '95%',
         flexDirection:'column',
         backgroundColor: theme.palette.SECONDRY,
-        justifyContent: 'center', //Centered vertically
+        justifyContent: 'center', 
         alignItems: 'center',
         margin:16,
-         // Centered horizontally
     },
     textInputStyle:{
         marginBottom:16,

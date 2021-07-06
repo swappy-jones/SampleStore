@@ -8,10 +8,9 @@ import {StackActions} from '@react-navigation/native';
 import { SCREEN_ROUTE_MAPPING } from '../../../utils/strings';
 import CardView from '../CardView';
 
-const Toolbar = ({updateData,showBackButton,navigation}) =>{
+const Toolbar = ({showBackButton,navigation}) =>{
 
     const handleBackButtonPress = () =>{
-        updateData(true)
         navigation.goBack();
     }
 
