@@ -2,7 +2,9 @@ const {
     SPLASH_SCREEN_TEXTS,
     LOGIN_SCREEN_TEXTS,
     FIRST_TIME_LOGIN_SCREEN_TEXTS,
-    CREATE_STORE_SCREEN_TEXTS } = require('./strings')
+    CREATE_STORE_SCREEN_TEXTS,
+    BOTTOM_NAVIGATION,
+    STORE_DETAILS_SCREEN_TEXTS } = require('./strings')
 
 export const SPLASH_ICON = {
     iconCaption:SPLASH_SCREEN_TEXTS.iconCaption,
@@ -79,10 +81,30 @@ export const CREATE_STORE_SCREEN_ICON={
 export const BOTTOM_TABS={
     itemList:{
         icon:require('../assets/item_list_icon.png'),
-        iconCaption:"Items"
+        iconCaption:BOTTOM_NAVIGATION.itemList
     },
     store:{
         icon:require('../assets/store_icon.png'),
-        iconCaption:"Store"
+        iconCaption:BOTTOM_NAVIGATION.store
+    }
+}
+
+export const STORE_DETAILS_ICON={
+    logo:{
+        icon: require('../assets/business_icon.png')
+    },
+    storeName:{
+        icon:require('../assets/name_icon.png'),
+        iconCaption:STORE_DETAILS_SCREEN_TEXTS.storeNameField
+    },
+    storeBio:{
+        icon:require('../assets/description_icon.png'),
+        iconCaption:STORE_DETAILS_SCREEN_TEXTS.storeBioField
+    },
+    edit:{
+        icon:require('../assets/edit_icon.png')
+    },
+    save:{
+        icon:require('../assets/save_icon.png')
     }
 }

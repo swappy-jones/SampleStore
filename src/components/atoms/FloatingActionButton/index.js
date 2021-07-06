@@ -6,7 +6,6 @@ import theme from '../../../theme';
 const FloatingActionButton = ({icon,label,handleFABPress,color}) => (
   <FAB
     style={styles.fab}
-    small
     icon={icon}
     label={label}
     color={theme.palette.PRIMARY}

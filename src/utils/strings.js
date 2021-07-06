@@ -35,3 +35,13 @@ export const CREATE_STORE_SCREEN_TEXTS={
     storeBioField:"Store Bio",
     createButton:"Create"
 }
+
+export const BOTTOM_NAVIGATION={
+    itemList:"Items",
+    store:"Store"
+}
+
+export const STORE_DETAILS_SCREEN_TEXTS={
+    storeNameField:"Store Name",
+    storeBioField:"Store Bio",
+}

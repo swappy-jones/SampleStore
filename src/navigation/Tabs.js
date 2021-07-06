@@ -73,9 +73,11 @@ const styles = StyleSheet.create(
         },
        bottomNavigationTextFocusedStyle:{
             color:theme.palette.PRIMARY,
+            fontSize:14
         },
        bottomNavigationTextNonFocusedStyle:{
-            color:theme.palette.GREY
+            color:theme.palette.GREY,
+            fontSize:12
         },
        bottomNavigationTabViewStyle:{
             alignItems:'center',
