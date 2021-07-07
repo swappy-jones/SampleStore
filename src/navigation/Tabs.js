@@ -57,6 +57,7 @@ const styles = StyleSheet.create(
             left:0,
             right:0,
             elevation:8,
+            paddingBottom:8,
             backgroundColor:theme.palette.SECONDRY,
             borderRadius:8,
             height:60,
