@@ -4,6 +4,8 @@ import { TextInput as PaperTextInput } from 'react-native-paper';
 import theme from '../../../theme';
 import PropTypes from 'prop-types'
 
+const colorPrimary = theme.palette.PRIMARY;
+
 
 const TextInput = ({label,text,leftIcon,rightIcon,placeholder,onChangeText,error,mode,disabled,theme,outlineColor,style,errorMessage,important,multiline,...restProps}) => {
   return (
@@ -19,7 +21,7 @@ const TextInput = ({label,text,leftIcon,rightIcon,placeholder,onChangeText,error
       left={leftIcon}
       right={rightIcon}
       theme={theme}
-      outlineColor={error===true?theme.palette.SECONDRY:outlineColor}
+      outlineColor={error===true?colorPrimary:outlineColor}
       multiline={multiline}
       {...restProps}
     />
@@ -37,7 +39,7 @@ TextInput.prototypes = {
 TextInput.defaultProps ={
   outlineColor:theme.palette.PRIMARY,
   disabled:false,
-  style:{marginBottom:10}
+  style:{marginBottom:12}
 }
 
 

@@ -7,11 +7,12 @@ import {TextStyles} from '../components/atoms/Typography'
 import CardView from '../components/organisms/CardView';
 import theme, { textInputTheme } from '../theme';
 import { LOGIN_SCREEN_ICON } from '../utils/IconGetter';
-import { LOGIN_SCREEN_TEXTS, SCREEN_ROUTE_MAPPING } from '../utils/strings';
+import { LOGIN_SCREEN_TEXTS, SCREEN_ROUTE_MAPPING, ASYNC_KEY_MAPPING } from '../utils/strings';
 import TextInput from '../components/atoms/TextInput'
 import { TextInput as PaperTextInput } from 'react-native-paper';
 import {StackActions} from '@react-navigation/native';
-
+import { storeJSONData, getJSONData } from '../utils/StorageHelper';
+import Credentail from '../model/Credential'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -24,11 +25,58 @@ const LoginScreen = ({navigation}) =>{
     const [password, setPassword] = React.useState('');
     const [passwordError, setPasswordError] = React.useState({isValid: true,errorMessage: '',});
 
-    const handleSignInPress = () =>{
-        navigation.dispatch(
-            StackActions.replace(SCREEN_ROUTE_MAPPING.FirstTimeLoginScreen)
-        )
+    const handleSignInPress = async () =>{
+        if(validateFields()){
+            const creds = Credentail;
+            creds.username=username;
+            creds.password=password;
+            await storeJSONData(ASYNC_KEY_MAPPING.CREDS,creds)
+            console.log(await getJSONData(ASYNC_KEY_MAPPING.CREDS))
+            navigation.dispatch(
+                StackActions.replace(SCREEN_ROUTE_MAPPING.FirstTimeLoginScreen)
+            )
+          }
+        
     }
+
+    const validateUsername = username => {
+        const result = {
+          isValid: true,
+          errorMessage: '',
+        };
+        if (username == '') {
+          result.errorMessage = 'Username cannot be empty';
+          result.isValid = false;
+        }
+        return result;
+      };
+    
+      const validatePassword = password => {
+        const result = {
+          isValid: true,
+          errorMessage: '',
+        };
+        if (password == '') {
+          result.errorMessage = 'Password cannot be empty';
+          result.isValid = false;
+        }
+        return result;
+      };
+    
+      const validateFields = () => {
+        const userNameValidationResult = validateUsername(username);
+        setUsernameError(userNameValidationResult);
+        const passwordValidationResult = validatePassword(password);
+        setPasswordError(passwordValidationResult);
+        if (
+          userNameValidationResult.isValid == true &&
+          passwordValidationResult.isValid == true
+        )
+          return true;
+        else return false;
+      };
+
+
 
 
     return(
@@ -125,7 +173,8 @@ const styles = StyleSheet.create({
          // Centered horizontally
     },
     textInputStyle:{
-        marginBottom:16,
+        marginBottom:4,
+        marginTop:12,
         width:windowWidth*.8,
     },
     wrapperViewStyle:{

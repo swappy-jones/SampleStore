@@ -12,6 +12,12 @@ export const SCREEN_ROUTE_MAPPING={
     StoreDetailsScreen:"StoreDetailsScreen"
 }
 
+export const ASYNC_KEY_MAPPING={
+    CREDS:"CREDS",
+    STORE:"STORE",
+    ITEMS:"ITEMS"
+}
+
 export const SPLASH_SCREEN_TEXTS={
     iconCaption:"Sales Superviser",
 }
