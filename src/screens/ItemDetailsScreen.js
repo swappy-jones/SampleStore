@@ -11,8 +11,8 @@ import { TextInput as PaperTextInput } from 'react-native-paper';
 import FloatingActionButton from '../components/atoms/FloatingActionButton'
 
 
-LogBox.ignoreAllLogs();
 
+LogBox.ignoreAllLogs();
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 

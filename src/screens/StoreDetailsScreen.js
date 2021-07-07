@@ -12,6 +12,8 @@ import {generateItemsKey, generateStoreKey} from '../utils/Helper'
 import { storeJSONData, getJSONData } from '../utils/StorageHelper';
 import { ASYNC_KEY_MAPPING } from '../utils/strings';
 import Store from '../model/Store';
+import Toolbar from '../components/organisms/Toolbar';
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -59,6 +61,7 @@ const StoreDetailsScreen = ({navigation}) =>{
 
     return(
         <SafeAreaView style={styles.mainViewStyle}>
+            <Toolbar navigation={navigation}/>
             <Image source={STORE_DETAILS_ICON.logo.icon} style={styles.imageStyle} resizeMethod='auto'/>
             <CardView style={styles.card}>
                 <TextInput
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
         backgroundColor:theme.palette.SECONDRY,
         flex:1,
         marginBottom:60,
-        justifyContent:'center',
+        justifyContent:'flex-start',
         alignItems:'center'
     },
     imageStyle:{
@@ -118,6 +121,7 @@ const styles = StyleSheet.create({
         height:"30%",
         resizeMode:"contain",
         alignSelf:'center',
+        marginTop:24
     },
     card:{
         width: '95%',

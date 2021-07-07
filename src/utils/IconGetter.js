@@ -126,6 +126,9 @@ export const HEADER_ICON={
     },
     backButton:{
         icon: require('../assets/arrow_left.png'),
+    },
+    logout:{
+        icon: require('../assets/logout_icon.png'),
     }
 }
 

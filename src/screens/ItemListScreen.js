@@ -7,20 +7,37 @@ import theme from '../theme';
 import { ITEM_LIST_SCREEN_ICON } from '../utils/IconGetter';
 import Banner from '../components/organisms/Banner';
 import {StackActions} from '@react-navigation/native';
-import { SCREEN_ROUTE_MAPPING } from '../utils/strings';
+import { ASYNC_KEY_MAPPING, SCREEN_ROUTE_MAPPING } from '../utils/strings';
 import { DUMMY_DATA_ITEMS } from '../model/DummyData';
 import uuid from 'react-native-uuid';
 import StoreItem from '../components/organisms/StoreItem'
 import Toolbar from '../components/organisms/Toolbar';
 import { useEffect } from 'react';
+import {getJSONData,storeJSONData} from '../utils/StorageHelper'
+import {generateItemsKey, generateStoreKey} from '../utils/Helper'
 
 
 LogBox.ignoreAllLogs();
 
 const ItemListScreen = ({navigation}) =>{
 
+    const[items,setItems] = useState([])
+
+    const updateItemList = async () =>{
+        const creds = await getJSONData(ASYNC_KEY_MAPPING.CREDS)
+        const storeKey = generateStoreKey(creds);
+        const store = await getJSONData(storeKey)
+        const itemKey = generateItemsKey(creds,store.name);
+        const items = await getJSONData(itemKey)
+        setItems(items)
+    }
+
+    React.useEffect(() => {
+        updateItemList()
+      }, []);
+
     updateData = data => {
-        console.log(data);
+        updateItemList()
       };
 
       const handleAddItemPress = () =>{
@@ -33,10 +50,10 @@ const ItemListScreen = ({navigation}) =>{
 
     return(
         <SafeAreaView style={styles.mainViewStyle}>
-            <Toolbar/>
+            <Toolbar navigation={navigation}/>
             <FlatList
                 style={styles.listStyle}
-                data={DUMMY_DATA_ITEMS}
+                data={items}
                 renderItem={renderItem}
                 />
             <FloatingActionButton

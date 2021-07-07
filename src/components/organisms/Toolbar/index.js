@@ -5,13 +5,22 @@ import {TextStyles} from '../../atoms/Typography'
 import theme from '../../../theme';
 import { HEADER_ICON } from '../../../utils/IconGetter';
 import {StackActions} from '@react-navigation/native';
-import { SCREEN_ROUTE_MAPPING } from '../../../utils/strings';
+import { ASYNC_KEY_MAPPING, SCREEN_ROUTE_MAPPING } from '../../../utils/strings';
 import CardView from '../CardView';
+import { storeJSONData } from '../../../utils/StorageHelper';
 
 const Toolbar = ({showBackButton,navigation}) =>{
 
     const handleBackButtonPress = () =>{
         navigation.goBack();
+    }
+
+    const logoutUser = async () =>{
+        console.log("asc")
+        await storeJSONData(ASYNC_KEY_MAPPING.CREDS,null)
+        navigation.dispatch(
+            StackActions.replace(SCREEN_ROUTE_MAPPING.LoginScreen)
+        )
     }
 
     return(
@@ -23,6 +32,11 @@ const Toolbar = ({showBackButton,navigation}) =>{
             }
             <Image style={styles.logoStyle} source={HEADER_ICON.app.icon}/>
             <Typography text={HEADER_ICON.app.iconCaption} textStyle={{...TextStyles.headerTextPrimary,...styles.appNameTextStyle}}/>
+            {
+                !showBackButton && <TouchableOpacity style={styles.logoutView} onPress={logoutUser}>
+                <Image style={styles.backButtonStyle} source={HEADER_ICON.logout.icon}/>
+            </TouchableOpacity>
+            }
         </View>
     );
 }
@@ -60,5 +74,12 @@ const styles=StyleSheet.create({
     },
     appNameTextStyle:{
         marginLeft:8
+    },
+    logoutView:{
+        flex:1,
+        justifyContent:'flex-end',
+        alignItems:'flex-end',
+        flexDirection:'row',
+        alignSelf:'flex-end',
     }
 })
