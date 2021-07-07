@@ -8,4 +8,6 @@ const Item ={
     id:""
 }
 
+export const dummyItems=[];
+
 export default Item;

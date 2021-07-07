@@ -14,12 +14,14 @@ export const SCREEN_ROUTE_MAPPING={
 
 export const ASYNC_KEY_MAPPING={
     CREDS:"CREDS",
+    //store key is created with <@{username}#{password}#{Store name}>
     STORE:"STORE",
+    //items key is created with <@{username}#{password}#{Store name}_items>
     ITEMS:"ITEMS"
 }
 
 export const SPLASH_SCREEN_TEXTS={
-    iconCaption:"Sales Superviser",
+    iconCaption:APP_NAME,
 }
 
 export const LOGIN_SCREEN_TEXTS={

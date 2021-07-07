@@ -5,13 +5,16 @@ import {TextStyles} from '../components/atoms/Typography'
 import FloatingActionButton from '../components/atoms/FloatingActionButton'
 import theme from '../theme';
 import {StackActions} from '@react-navigation/native';
-import { CREATE_STORE_SCREEN_TEXTS, SCREEN_ROUTE_MAPPING } from '../utils/strings';
+import { CREATE_STORE_SCREEN_TEXTS, SCREEN_ROUTE_MAPPING,ASYNC_KEY_MAPPING } from '../utils/strings';
 import { CREATE_STORE_SCREEN_ICON } from '../utils/IconGetter';
 import CardView from '../components/organisms/CardView'
 import TextInput from '../components/atoms/TextInput'
 import { TextInput as PaperTextInput } from 'react-native-paper';
 import Button,{ButtonStyles} from '../components/atoms/Button'
-
+import {getJSONData,storeJSONData} from '../utils/StorageHelper'
+import {generateItemsKey, generateStoreKey} from '../utils/Helper'
+import Store from '../model/Store'
+import { dummyItems } from '../model/Item';
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -22,13 +25,42 @@ const CreateStoreScreen = ({navigation}) =>{
     const [storeName, setStoreName] = React.useState('');
     const [storeNameError, setStoreNameError] = React.useState({isValid: true,errorMessage: '',});
     const [storeBio, setStoreBio] = React.useState('');
-    const [storeBioError, setStoreBioError] = React.useState({isValid: true,errorMessage: '',});
 
-    const handleCreateStorePress = () =>{
-        navigation.dispatch(
-            StackActions.replace(SCREEN_ROUTE_MAPPING.HomeDashboardScreen)
-        )
+    const handleCreateStorePress = async () =>{
+        if(validateFields()){
+            const creds = await getJSONData(ASYNC_KEY_MAPPING.CREDS);
+            const storeKey = generateStoreKey(creds);
+            const store = Store;
+            store.name=storeName;
+            store.bio=storeBio;
+            await storeJSONData(storeKey,store)
+            const itemsKey = generateItemsKey(creds,storeName);
+            await storeJSONData(itemsKey,dummyItems)
+            navigation.dispatch(
+                StackActions.replace(SCREEN_ROUTE_MAPPING.HomeDashboardScreen)
+            )
+        }
     }
+
+    const validateStoreName = storeName => {
+        const result = {
+          isValid: true,
+          errorMessage: '',
+        };
+        if (storeName == '') {
+          result.errorMessage = 'store name cannot be empty';
+          result.isValid = false;
+        }
+        return result;
+      };
+    
+      const validateFields = () => {
+        const storeNameValidationResult = validateStoreName(storeName);
+        setStoreNameError(storeNameValidationResult);
+        if (storeNameValidationResult.isValid == true)
+          return true;
+        else return false;
+      };
 
 
     return(
@@ -45,6 +77,7 @@ const CreateStoreScreen = ({navigation}) =>{
                     error={!storeNameError.isValid}
                     errorMessage={storeNameError.errorMessage}
                     onChangeText={setStoreName}
+                    important={true}
                     leftIcon={
                         <PaperTextInput.Icon
                         name={CREATE_STORE_SCREEN_ICON.storeName.icon}
@@ -57,8 +90,6 @@ const CreateStoreScreen = ({navigation}) =>{
                     theme={theme.textInputTheme}
                     style={styles.textInputStyle}
                     text={storeBio}
-                    error={!storeBioError.isValid}
-                    errorMessage={storeBioError.errorMessage}
                     onChangeText={setStoreBio}
                     leftIcon={
                         <PaperTextInput.Icon
@@ -102,7 +133,8 @@ const styles = StyleSheet.create({
         margin:24
     },
     textInputStyle:{
-        marginBottom:16,
+        marginBottom:4,
+        marginTop:12,
         width:windowWidth*.85
     },
 })

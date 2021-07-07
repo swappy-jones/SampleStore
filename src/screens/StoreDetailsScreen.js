@@ -8,21 +8,54 @@ import { STORE_DETAILS_ICON } from '../utils/IconGetter';
 import CardView from '../components/organisms/CardView';
 import TextInput from '../components/atoms/TextInput';
 import { TextInput as PaperTextInput } from 'react-native-paper';
-
+import {generateItemsKey, generateStoreKey} from '../utils/Helper'
+import { storeJSONData, getJSONData } from '../utils/StorageHelper';
+import { ASYNC_KEY_MAPPING } from '../utils/strings';
+import Store from '../model/Store';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const StoreDetailsScreen = () =>{
+const StoreDetailsScreen = ({navigation}) =>{
     const [editEnabled, setEditEnabled] = React.useState(false);
     const [storeName, setStoreName] = React.useState('');
     const [storeNameError, setStoreNameError] = React.useState({isValid: true,errorMessage: '',});
     const [storeBio, setStoreBio] = React.useState('');
     const [storeBioError, setStoreBioError] = React.useState({isValid: true,errorMessage: '',});
 
-    const handleEditPress = () =>{
-            setEditEnabled(!editEnabled)
+    const updateStoreData = async () =>{
+        const creds = await getJSONData(ASYNC_KEY_MAPPING.CREDS)
+        const storeKey = generateStoreKey(creds);
+        const store = Store;
+        store.name=storeName;
+        store.bio=storeBio
+        storeJSONData(storeKey,store)
     }
+
+    const handleEditPress = () =>{
+        if(editEnabled){
+            updateStoreData();
+        }
+        setEditEnabled(!editEnabled)
+    }
+
+    const setStoreData = async () =>{
+        const creds = await getJSONData(ASYNC_KEY_MAPPING.CREDS)
+        const storeKey = generateStoreKey(creds);
+        const store = await getJSONData(storeKey)
+        setStoreName(store.name)
+        setStoreBio(store.bio)
+    }
+
+    React.useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            setEditEnabled(false)
+            setStoreData();
+        });
+    
+        // Return the function to unsubscribe from the event so it gets removed on unmount
+        return unsubscribe;
+      }, [navigation]);
 
     return(
         <SafeAreaView style={styles.mainViewStyle}>
@@ -37,6 +70,7 @@ const StoreDetailsScreen = () =>{
                     error={!storeNameError.isValid}
                     errorMessage={storeNameError.errorMessage}
                     onChangeText={setStoreName}
+                    disabled={!editEnabled}
                     leftIcon={
                         <PaperTextInput.Icon
                         name={STORE_DETAILS_ICON.storeName.icon}
@@ -52,6 +86,7 @@ const StoreDetailsScreen = () =>{
                     error={!storeBioError.isValid}
                     errorMessage={storeBioError.errorMessage}
                     onChangeText={setStoreBio}
+                    disabled={!editEnabled}
                     leftIcon={
                         <PaperTextInput.Icon
                         name={STORE_DETAILS_ICON.storeBio.icon}

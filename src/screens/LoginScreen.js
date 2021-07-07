@@ -13,6 +13,7 @@ import { TextInput as PaperTextInput } from 'react-native-paper';
 import {StackActions} from '@react-navigation/native';
 import { storeJSONData, getJSONData } from '../utils/StorageHelper';
 import Credentail from '../model/Credential'
+import {generateItemsKey, generateStoreKey} from '../utils/Helper'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -31,10 +32,17 @@ const LoginScreen = ({navigation}) =>{
             creds.username=username;
             creds.password=password;
             await storeJSONData(ASYNC_KEY_MAPPING.CREDS,creds)
-            console.log(await getJSONData(ASYNC_KEY_MAPPING.CREDS))
-            navigation.dispatch(
-                StackActions.replace(SCREEN_ROUTE_MAPPING.FirstTimeLoginScreen)
-            )
+            const storeKey  = generateStoreKey(creds)
+            const store = await getJSONData(storeKey)
+            if(store){
+                navigation.dispatch(
+                    StackActions.replace(SCREEN_ROUTE_MAPPING.HomeDashboardScreen)
+                )
+            }else{
+                navigation.dispatch(
+                    StackActions.replace(SCREEN_ROUTE_MAPPING.FirstTimeLoginScreen)
+                )
+            }
           }
         
     }
