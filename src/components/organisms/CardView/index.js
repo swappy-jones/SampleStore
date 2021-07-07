@@ -1,9 +1,16 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet,KeyboardAvoidingView ,ScrollView} from 'react-native';
 import theme from '../../../theme';
 const CardView = props => {
   return (
-    <View style={{ ...styles.card, ...props.style }}>{props.children}</View>
+    <View style={{ ...styles.card, ...props.style }}>
+      <ScrollView>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}
+             style={{flex:1}}>
+          {props.children}
+        </KeyboardAvoidingView>
+      </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({
