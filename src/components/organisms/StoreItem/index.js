@@ -8,14 +8,17 @@ import { ITEM_LIST_SCREEN_ICON } from '../../../utils/IconGetter';
 import {StackActions} from '@react-navigation/native';
 import { SCREEN_ROUTE_MAPPING } from '../../../utils/strings';
 import CardView from '../CardView';
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const StoreItem = ({item}) =>{
+const StoreItem = ({item,listItemClickListener}) =>{
+
     return(
-        <CardView style={styles.mainBodyStyle} key={item.id}>
+        <TouchableWithoutFeedback onPress={()=>listItemClickListener(item)}>
+            <CardView style={styles.mainBodyStyle} key={item.id}>
             <View style={styles.namePriceStyle}>
                 <View style={styles.nameViewStyle}>
                     <Typography text={item.name} textStyle={TextStyles.bodyTextPrimary}/>
@@ -28,6 +31,7 @@ const StoreItem = ({item}) =>{
             <Typography text={item.tags} textStyle={{...TextStyles.smallFocusTextPrimary,...styles.typographySpacingStyle}}/>
             <Typography text={"Left in stock: "+item.availableStock+item.unit} textStyle={{...TextStyles.smallFocusTextPrimary,...styles.typographySpacingStyle}}/>
         </CardView>
+        </TouchableWithoutFeedback>
     );
 }
 

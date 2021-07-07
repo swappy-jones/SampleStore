@@ -153,6 +153,10 @@ export const ITEM_DETAILS_SCREEN_ICON={
         iconCaption:ITEM_DETAILS_SCREEN_TEXTS.stock,
         icon:require('../assets/stock_icon.png')
     },
+    itemUnit:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.unit,
+        icon:require('../assets/unit_icon.png')
+    },
     edit:{
         iconCaption:ITEM_DETAILS_SCREEN_TEXTS.edit,
         icon:require('../assets/edit_icon.png')
@@ -160,5 +164,9 @@ export const ITEM_DETAILS_SCREEN_ICON={
     save:{
         iconCaption:ITEM_DETAILS_SCREEN_TEXTS.save,
         icon:require('../assets/save_icon.png')
+    },
+    delete:{
+        iconCaption:ITEM_DETAILS_SCREEN_TEXTS.delete,
+        icon:require('../assets/delete_icon.png')
     }
 }

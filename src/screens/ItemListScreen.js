@@ -36,16 +36,21 @@ const ItemListScreen = ({navigation}) =>{
         updateItemList()
       }, []);
 
-    updateData = data => {
-        updateItemList()
+    updateData = updatedItemList => {
+        console.log(updatedItemList)
+        setItems(updatedItemList)
       };
 
       const handleAddItemPress = () =>{
-        navigation.navigate(SCREEN_ROUTE_MAPPING.ItemDetailsScreen,{updateData:updateData})
+        navigation.navigate(SCREEN_ROUTE_MAPPING.ItemDetailsScreen,{updateData:updateData,item:null})
+    }
+    
+    const listItemClickListener = (item) =>{
+        navigation.navigate(SCREEN_ROUTE_MAPPING.ItemDetailsScreen,{updateData:updateData,item:item})
     }
 
     const renderItem = ({ item }) => (
-        <StoreItem item={item}/>
+        <StoreItem item={item} listItemClickListener={listItemClickListener}/>
       );
 
     return(
@@ -55,6 +60,7 @@ const ItemListScreen = ({navigation}) =>{
                 style={styles.listStyle}
                 data={items}
                 renderItem={renderItem}
+                keyExtractor={(item, index) => index.toString()}
                 />
             <FloatingActionButton
                 icon={ITEM_LIST_SCREEN_ICON.addItem.icon}

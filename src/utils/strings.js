@@ -68,6 +68,9 @@ export const ITEM_DETAILS_SCREEN_TEXTS={
     price:"Price ($)",
     tags:"Tags",
     stock:"Available Stock",
+    unit:"Unit",
     edit:"Edit",
-    save:"Save"
+    save:"Save",
+    delete:"delete",
+    createNew:"Add a new Item to your store"
 }

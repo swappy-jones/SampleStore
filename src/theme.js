@@ -16,7 +16,9 @@ const theme = {
     },
     textInput:{
         flat:"flat",
-        outlined:"outlined"
+        outlined:"outlined",
+        numberPad:"number-pad",
+        numeric:"numeric"
     },
 }
 

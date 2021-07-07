@@ -73,7 +73,7 @@ const StoreDetailsScreen = ({navigation}) =>{
                     error={!storeNameError.isValid}
                     errorMessage={storeNameError.errorMessage}
                     onChangeText={setStoreName}
-                    disabled={!editEnabled}
+                    disabled={true}
                     leftIcon={
                         <PaperTextInput.Icon
                         name={STORE_DETAILS_ICON.storeName.icon}
